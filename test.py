@@ -1,7 +1,7 @@
 import time
 start = time.time()
 
-a = [i for i in range(3,100)]
+a = [i for i in range(4,100)]
 
 print(a)
 
