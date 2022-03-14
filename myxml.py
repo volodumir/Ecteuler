@@ -1,8 +1,15 @@
-import urllib
+import requests
+import xmltodict
 
-url = 'https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?valcode=EUR&date=20200302'
+date = str('20200302')
+def myxml(date):
+    url = 'https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?valcode=EUR&date='+date
+    response = requests.get(url)
+    data = xmltodict.parse(response.content)
 
-usock = urllib.urlopen(url)
-xmldoc = minidom.parse(usock)
-usock.close()
-print(xmldoc.toxml())
+    print(data['exchange']['currency']['txt'])
+    print(data['exchange']['currency']['rate'])
+    print(data['exchange']['currency']['cc'])
+    print(data['exchange']['currency']['exchangedate'])
+
+myxml(date)
