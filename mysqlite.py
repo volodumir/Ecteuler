@@ -11,4 +11,4 @@ def mysqlite(exchangedate, rate):
 
     base.close()
 
-mysqlite('29.04.1994', '26.9492')
+# mysqlite('29.04.1994', '26.9492')

@@ -1,7 +1,8 @@
 from datetime import datetime,timedelta
 
 def nbu_dates():
-    a = [i for i in range(4,100)]
+    dddaaayys = 365*15
+    a = [i for i in range(4,dddaaayys)]
     data = []
 
     for key in a:
@@ -11,4 +12,5 @@ def nbu_dates():
         data.append(currentTime)
     return data
 
-print(nbu_dates())
+
+# print(nbu_dates())
